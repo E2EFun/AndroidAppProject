@@ -39,7 +39,7 @@ public class PreviewInvoiceActivity extends BaseInvoiceActivity {
 
     @Override
     protected Fragment createFragment() {
-        Invoice invoice = (Invoice) getIntent().getParcelableExtra(INVOICE_DATA);
+        Invoice invoice = getIntent().getParcelableExtra(INVOICE_DATA);
         ArrayList<Item> items = getIntent().getParcelableArrayListExtra(INVOICE_ITEMS);
         return PreviewInvoiceFragment.newInstance(invoice,items);
     }
