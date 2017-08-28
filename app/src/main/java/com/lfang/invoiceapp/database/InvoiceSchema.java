@@ -18,7 +18,7 @@ public class InvoiceSchema {
     }
 
     public static final class ItemTable {
-        public static final String NAME = "item";
+        public static final String NAME = "items";
 
         public static final class Cols {
             public static final String Description = "description";
