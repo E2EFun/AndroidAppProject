@@ -80,7 +80,8 @@ public class NewInvoiceFragment extends Fragment {
     List<String> values = new ArrayList<>();
 
     private String DEFAULT_NAME = "Custom Amount";
-    private double MAX_VALUE = 999999.99;
+    private String DATE_FORMAT = "MM/dd/yyyy";
+    private double MAX_VALUE = 99999.99;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -133,7 +134,7 @@ public class NewInvoiceFragment extends Fragment {
             }
         });
         mDueDayEditText = (EditText) view.findViewById(R.id.due_date_label);
-        mDueDayEditText.setText(new SimpleDateFormat("MM/dd/yyyy", Locale.US).format(CalculateUtil.futureDate()));
+        mDueDayEditText.setText(new SimpleDateFormat(DATE_FORMAT, Locale.US).format(CalculateUtil.futureDate()));
         mDueDayEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -285,7 +286,7 @@ public class NewInvoiceFragment extends Fragment {
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         Calendar newCal = Calendar.getInstance();
                         newCal.set(year, month, dayOfMonth);
-                        mDueDayEditText.setText(new SimpleDateFormat("MM/dd/yyyy", Locale.US).format(newCal.getTime()));
+                        mDueDayEditText.setText(new SimpleDateFormat(DATE_FORMAT, Locale.US).format(newCal.getTime()));
                     }
                 },
                 currentCal.get(Calendar.YEAR),
@@ -408,7 +409,7 @@ public class NewInvoiceFragment extends Fragment {
 
     private void showAlertDialog() {
         AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
-        alertDialog.setTitle("Alert");
+        alertDialog.setTitle(getString(R.string.invoice_alert));
         alertDialog.setMessage(getString(R.string.alert_message));
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
@@ -457,7 +458,7 @@ public class NewInvoiceFragment extends Fragment {
 
     private boolean isValidAmt() {
         totalAmount = prepareTotalAmt();
-        return  totalAmount.compareTo(BigDecimal.ZERO) > 0 && items.size() > 0 && !aboveMax;
+        return  totalAmount.compareTo(BigDecimal.ZERO) > 0 && items.size() > 0 && !aboveMax && totalAmount.compareTo(new BigDecimal(MAX_VALUE)) < 0;
     }
 
     private void insertInvoice() {
