@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/invoice_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/invoice_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_margin_top">
+
+                <EditText
+                    android:id="@+id/name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/hint_name"
+                    android:inputType="text"
+                    android:maxLength="@integer/max_name_length"
+                    android:maxLines="1"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:textSize="@dimen/medium_text_size"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/invoice_email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_margin_top">
+
+                <EditText
+                    android:id="@+id/email_eidt_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/hint_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="@integer/max_name_length"
+                    android:maxLines="1"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:textSize="@dimen/medium_text_size"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/date_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_margin_top">
+
+                <ImageView
+                    android:id="@+id/due_date_value"
+                    android:src="@drawable/ic_event_black_24dp"
+                    android:layout_width="@dimen/add_image_width"
+                    android:layout_height="@dimen/add_image_heigh"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/due_date_label_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/due_date_value">
+
+                    <EditText
+                        android:id="@+id/due_date_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/hint_date"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:textSize="@dimen/medium_text_size"
+                        tools:text="07/27/2017"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_margin_top"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/description_eidt_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_description"
+                    android:inputType="text"
+                    android:maxLength="@integer/max_name_length"
+                    android:maxLines="1"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:textSize="@dimen/medium_text_size"
+                    />
+
+                <EditText
+                    android:id="@+id/item_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="@string/hint_price"
+                    android:inputType="numberDecimal"
+                    android:maxLength="@integer/max_price_length"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:textSize="@dimen/medium_text_size"
+                    tools:text="$0.00"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_margin_top">
+
+            <ImageView
+                android:id="@+id/add_button"
+                android:layout_width="@dimen/add_image_width"
+                android:layout_height="@dimen/add_image_heigh"
+                android:src="@drawable/ic_add_circle_outline_black_24dp"/>
+
+            <ImageView
+                android:id="@+id/remove_button"
+                android:layout_width="@dimen/add_image_width"
+                android:layout_height="@dimen/add_image_heigh"
+                android:src="@drawable/ic_remove_circle_outline_black_24dp"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/total_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/total_margin_right"
+            android:layout_marginTop="@dimen/activity_margin_top"
+            android:text="@string/total_price"
+            android:textSize="@dimen/large_text_size"
+            android:textColor="@color/balck"/>
+    </LinearLayout>
+</ScrollView>

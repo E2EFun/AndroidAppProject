@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">InvoiceApp</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="due_date">Due Date</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_date">Due date</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_price">Amount</string>
+    <string name="send_button">Send</string>
+    <string name="new_invoice">New Invoice</string>
+    <string name="view_button">View</string>
+    <string name="add_button">Add line item</string>
+    <string name="menu_send">Send</string>
+    <string name="menu_preview">Preview</string>
+    <string name="alert_message">Something\'s not quite right</string>
+    <string name="total_price">Total</string>
+    <string name="invoice_name">Name</string>
+    <string name="invoice_email">Email</string>
+    <string name="invoice_dueday">Due Day</string>
+    <string name="invoice_title">Invoice</string>
+    <string name="invoice_status">Status: PAID</string>
+    <string name="invoice_bill">Bill to</string>
+    <string name="invoice_ship">Ship to</string>
+    <string name="zero_price">$0.00</string>
+    <string name="zero_invoice">Please click New Invoice button to create a new invoice </string>
+</resources>
