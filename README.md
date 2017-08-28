@@ -1,6 +1,8 @@
 # AndroidAppProject
 This is my android app
 This app is about invoice simple app. 
+
+
 Conditions:
 1)Name is required, if not, get alert
 2)Email is optional, but if input invalid email, the user will get warning
